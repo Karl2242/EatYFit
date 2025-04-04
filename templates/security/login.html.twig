@@ -1,37 +1,85 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Connexion{% endblock %}
 
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+<div class="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-xl w-full max-w-md p-8 space-y-8">
+        <div class="text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Connexion</h2>
+            <p class="text-gray-500">Bienvenue, content de te revoir !</p>
         </div>
-    {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+        {% if app.user %}
+            <div class="bg-emerald-100 border border-emerald-400 text-emerald-700 px-4 py-3 rounded-lg">
+                Tu es connecté en tant que {{ app.user.userIdentifier }}, 
+                <a href="#" class="font-medium text-emerald-600 hover:text-emerald-700">
+                    Déconnexion
+                </a>
+            </div>
+        {% endif %}
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+        <form method="post" class="space-y-6">
+            {% if error %}
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                    <span class="block sm:inline">{{ error.messageKey|trans(error.messageData, 'security') }}</span>
+                </div>
+            {% endif %}
 
-    <div class="checkbox mb-3">
-        <label>
-            <input type="checkbox" name="_remember_me"> Remember me
-        </label>
+            <div class="space-y-4">
+                <div class="relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-emerald-500 h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <input 
+                        type="email" 
+                        value="{{ last_username }}" 
+                        name="email" 
+                        id="inputEmail" 
+                        placeholder="Ton email"
+                        class="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all"
+                        autocomplete="email"
+                        required 
+                        autofocus
+                    >
+                </div>
+
+                <div class="relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-3 top-1/2 transform -translate-y-1/2 text-emerald-500 h-5 w-5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    <input 
+                        type="password" 
+                        name="password" 
+                        id="inputPassword" 
+                        placeholder="Ton mot de passe"
+                        class="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+            </div>
+
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+            <div class="flex items-center justify-between text-sm">
+                <label class="flex items-center space-x-2 cursor-pointer">
+                    <input type="checkbox" name="_remember_me" class="rounded border-gray-300 text-emerald-500 focus:ring-emerald-500">
+                    <span class="text-gray-600">Se souvenir de moi</span>
+                </label>
+                <a href="#" class="text-emerald-500 hover:text-emerald-600 font-medium">
+                    Mot de passe oublié ?
+                </a>
+            </div>
+
+            <button type="submit" class="w-full bg-emerald-500 text-white py-3 rounded-lg hover:bg-emerald-600 transition-colors flex items-center justify-center space-x-2 group">
+                <span>Se connecter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-x-1 transition-transform" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+        </form>
+
+        <p class="text-center text-gray-600 text-sm">
+            Pas encore inscrit ?
+            <a href="#" class="text-emerald-500 hover:text-emerald-600 font-medium">
+                Rejoins-nous !
+            </a>
+        </p>
     </div>
-
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
+</div>
 {% endblock %}
