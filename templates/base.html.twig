@@ -14,8 +14,13 @@
     <body>
     <header class="bg-white shadow-sm">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         {% if app.user %}
             <div class="flex justify-between items-center h-16">
+            {% else %}
+            <div class="flex justify-center items-center h-16">
+            {% endif %}
                 <div class="flex items-center">
+                   {% if app.user %}
                     <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=100&h=100" 
                          alt="Health Dashboard" 
                          class="h-10 w-10 rounded-full object-cover" />
@@ -28,6 +33,17 @@
                         </a>
                     </div>
                 </div>
+                {% else %}
+                 <div class="ml-4 flex justify-center space-x-8">
+                        <a href="{{ path("app_register")}}" class="text-emerald-600 hover:text-emerald-700 px-3 py-2 rounded-md text-sm font-medium">
+                            Inscription
+                        </a>
+                        <a href="{{ path("app_login")}}" class="text-emerald-600 hover:text-emerald-700 px-3 py-2 rounded-md text-sm font-medium">
+                            Connexion
+                        </a>
+                    </div>
+                {% endif %}
+                 {% if app.user %}
                 <section class="flex items-center space-x-4">
                     <button class="h-6 w-6 text-emerald-600 cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -41,6 +57,7 @@
                     </button>
                 </section>
             </div>
+            {% endif %}
         </nav>
     </header>
         {% block body %}{% endblock %}
