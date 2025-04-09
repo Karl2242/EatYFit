@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire de suivi fitness{% endblock %}
+
+{% block body %}
+<div class="min-h-screen bg-[#f0faf0] p-6">
+    <div class="max-w-3xl mx-auto">
+        <h1 class="text-3xl font-bold text-green-600 mb-8 text-center">
+            Informations Personnelles
+        </h1>
+        
+        {{ form_start(form, {'attr': {'class': 'space-y-6'}}) }}
+            <div class="bg-white rounded-xl shadow-md p-6 space-y-4">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-green-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Identité
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        {{ form_label(form.prenom, 'Prénom', {'label_attr': {'class': 'block text-sm font-medium text-gray-700'}}) }}
+                        {{ form_widget(form.prenom, {'attr': {'class': 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500'}}) }}
+                    </div>
+                    
+                    <div>
+                        {{ form_label(form.nom, 'Nom', {'label_attr': {'class': 'block text-sm font-medium text-gray-700'}}) }}
+                        {{ form_widget(form.nom, {'attr': {'class': 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500'}}) }}
+                    </div>
+                    
+                    <div>
+                        {{ form_label(form.age, 'Âge', {'label_attr': {'class': 'block text-sm font-medium text-gray-700 flex items-center gap-2'}}) }}
+                        {{ form_widget(form.age, {'attr': {'class': 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500'}}) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 space-y-4">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-green-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.91 8.84 8.56 2.23a1.93 1.93 0 0 0-1.81 0L3.1 4.13a2.12 2.12 0 0 0-.05 3.69l12.22 6.93a2 2 0 0 0 1.94 0L21 12.51a2.12 2.12 0 0 0-.09-3.67Z"/><path d="m3.09 8.84 12.35-6.61a1.93 1.93 0 0 1 1.81 0l3.65 1.9a2.12 2.12 0 0 1 .1 3.69L8.73 14.75a2 2 0 0 1-1.94 0L3 12.51a2.12 2.12 0 0 1 .09-3.67Z"/><line x1="12" y1="22" x2="12" y2="13"/></svg>
+                    Mensurations
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        {{ form_label(form.poids, 'Poids actuel (kg)', {'label_attr': {'class': 'block text-sm font-medium text-gray-700 flex items-center gap-2'}}) }}
+                        {{ form_widget(form.poids, {'attr': {'class': 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500'}}) }}
+                    </div>
+                    
+                    <div>
+                        {{ form_label(form.taille, 'Taille (cm)', {'label_attr': {'class': 'block text-sm font-medium text-gray-700 flex items-center gap-2'}}) }}
+                        {{ form_widget(form.taille, {'attr': {'class': 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500'}}) }}
+                    </div>
+                    
+                    <div>
+                        {{ form_label(form.objectif_poids, 'Poids objectif (kg)', {'label_attr': {'class': 'block text-sm font-medium text-gray-700 flex items-center gap-2'}}) }}
+                        {{ form_widget(form.objectif_poids, {'attr': {'class': 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500'}}) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 space-y-4">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-green-500" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    Objectifs Quotidiens
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        {{ form_label(form.pas_act, 'Pas actuels', {'label_attr': {'class': 'block text-sm font-medium text-gray-700 flex items-center gap-2'}}) }}
+                        {{ form_widget(form.pas_act, {'attr': {'class': 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500'}}) }}
+                    </div>
+                    
+                    <div>
+                        {{ form_label(form.pas_obj, 'Objectif de pas', {'label_attr': {'class': 'block text-sm font-medium text-gray-700 flex items-center gap-2'}}) }}
+                        {{ form_widget(form.pas_obj, {'attr': {'class': 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500'}}) }}
+                    </div>
+                    
+                    <div>
+                        {{ form_label(form.cal_act, 'Calories actuelles', {'label_attr': {'class': 'block text-sm font-medium text-gray-700 flex items-center gap-2'}}) }}
+                        {{ form_widget(form.cal_act, {'attr': {'class': 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500'}}) }}
+                    </div>
+                    
+                    <div>
+                        {{ form_label(form.cal_obj, 'Objectif calories', {'label_attr': {'class': 'block text-sm font-medium text-gray-700 flex items-center gap-2'}}) }}
+                        {{ form_widget(form.cal_obj, {'attr': {'class': 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500'}}) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                <button type="submit" class="px-6 py-3 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-colors">
+                    Enregistrer
+                </button>
+            </div>
+        {{ form_end(form) }}
+    </div>
+</div>
+{% endblock %}
