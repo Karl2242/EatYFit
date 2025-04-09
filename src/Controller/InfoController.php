@@ -16,29 +16,29 @@ final class InfoController extends AbstractController
     #[Route('/info', name: 'app_info')]
     public function index(Request $request,  Security $security, EntityManagerInterface $entityManager): Response
     {
-        $info = new Info(); // ou l'entité que tu veux remplir
-        $form = $this->createForm(InfoType::class, $info);
+        
         $user = $security->getUser();
+        $info = $entityManager->getRepository(Info::class)->findOneBy(['user' => $user]); // ou l'entité que tu veux remplir
 
         if (!$info) {
             $info = new Info();
             $info->setUser($user);
         }
 
-
+        $form = $this->createForm(InfoType::class, $info);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             // logiques de traitement, ex : sauvegarder les données
-   
 
-    $info->setUser($user);
 
-                        $entityManager->persist($info);
-                        $entityManager->flush();
-            
-                        // do anything else you need here, like send an email
-            
+            $info->setUser($user);
+
+            $entityManager->persist($info);
+            $entityManager->flush();
+
+            // do anything else you need here, like send an email
+
         }
 
         return $this->render('info/index.html.twig', [
