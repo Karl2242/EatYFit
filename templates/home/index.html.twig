@@ -1,145 +1,137 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Dashboard Santé{% endblock %}
-
+{% block title %}Dashboard Santé
+{% endblock %}
+{% block javascripts %}
+{% endblock %}
 {% block body %}
-<div class="min-h-screen bg-gradient-to-br from-emerald-50 to-green-50">
-    {# Navigation #}
+	<div class="min-h-screen bg-gradient-to-br from-emerald-50 to-green-50">
+		{# Navigation #}
 
-    {# Main Content #}
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {# Steps & Timer Card #}
-            <div class="bg-white rounded-2xl shadow-lg p-6 relative overflow-hidden">
-                <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-xl font-semibold text-gray-800">Pas & Timer</h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
-                    </svg>
-                </div>
-                <div class="flex items-center justify-between">
-                    <div class="flex flex-col">
-                        <span class="text-4xl font-bold text-emerald-600">{{ info.pasRestants }}</span>
-                        <span class="text-sm text-gray-500">Pas Restants</span>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <div class="flex items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
-                            </svg>
-                            <span class="text-gray-600">{{ info.pasObj }}/pas</span>
-                        </div>
-                        <div class="flex items-center space-x-2 mt-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span class="text-gray-600">3/Timer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+		{# Main Content #}
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"> <div
+				class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				{# Steps & Timer Card #}
+				<div class="bg-white rounded-2xl shadow-lg p-6 relative overflow-hidden">
+					<div class="flex justify-between items-center mb-6">
+						<h2 class="text-xl font-semibold text-gray-800">Pas & Timer</h2>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"/>
+						</svg>
+					</div>
+					<div class="flex items-center justify-between">
+						<div class="flex flex-col">
+							<span class="text-4xl font-bold text-emerald-600">{{ info.pasRestants }}</span>
+							<span class="text-sm text-gray-500">Pas Restants</span>
+						</div>
+						<div class="flex flex-col items-end">
+							<div class="flex items-center space-x-2">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"/>
+								</svg>
+								<span class="text-gray-600">{{ info.pasObj }}/pas</span>
+							</div>
+							<div class="flex items-center space-x-2 mt-2">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+								</svg>
+								<span class="text-gray-600">3/Timer</span>
+							</div>
+						</div>
+					</div>
+				</div>
 
-            {# Calories & Recipes Card #}
-            <div class="bg-white rounded-2xl shadow-lg p-6">
-                <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-xl font-semibold text-gray-800">Calories & Recettes</h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
-                    </svg>
-                </div>
-                <div class="flex items-center justify-between">
-                    <div class="relative w-24 h-24">
-                        <svg class="transform -rotate-90 w-24 h-24">
-                            <circle
-                                class="text-gray-200"
-                                stroke-width="8"
-                                stroke="currentColor"
-                                fill="transparent"
-                                r="40"
-                                cx="48"
-                                cy="48"
-                            />
-                            <circle
-                                class="text-emerald-500"
-                                stroke-width="8"
-                                stroke-dasharray="251.2"
-                                stroke-dashoffset="100"
-                                stroke-linecap="round"
-                                stroke="currentColor"
-                                fill="transparent"
-                                r="40"
-                                cx="48"
-                                cy="48"
-                            />
-                        </svg>
-                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                            <div class="text-center">
-                                <span class="text-xl font-semibold text-gray-700">{{ info.calRestants }}</span>
-                                <span class="text-sm text-gray-500 block">/kcal</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-end">
-                        <div class="flex items-center space-x-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
-                            </svg>
-                            <span class="text-gray-600">{{ info.calObj }}/kcal</span>
-                        </div>
-                        <div class="flex items-center space-x-2 mt-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
-                            </svg>
-                            <span class="text-gray-600">4 recettes créées</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+				{# Calories & Recipes Card #}
+				<div class="bg-white rounded-2xl shadow-lg p-6">
+					<div class="flex justify-between items-center mb-6">
+						<h2 class="text-xl font-semibold text-gray-800">Calories & Recettes</h2>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z"/>
+						</svg>
+					</div>
+					<div class="flex items-center justify-between">
+						<div
+							class="relative w-24 h-24">
+							{# Calcul du pourcentage de calories et du dashoffset pour le cercle #}
+							{% set calPercent = (info.calAct and info.calObj) ? (info.calAct / info.calObj * 100) : 0 %}
+							{% set dashOffset = 251.2 - (251.2 * calPercent / 100) %}
+							<svg class="transform -rotate-90 w-24 h-24">
+								<circle class="text-gray-200" stroke-width="8" stroke="currentColor" fill="transparent" r="40" cx="48" cy="48"/>
+								<circle class="text-emerald-500 transition-all duration-500 ease-out" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="{{ dashOffset }}" stroke-linecap="round" stroke="currentColor" fill="transparent" r="40" cx="48" cy="48"/>
+							</svg>
+							<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+								<div class="text-center">
+									<span class="text-xl font-semibold text-gray-700">{{ info.calRestants }}</span>
+									<span class="text-sm text-gray-500 block">/kcal</span>
+								</div>
+							</div>
+						</div>
+						<div class="flex flex-col items-end">
+							<div class="flex items-center space-x-2">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"/>
+								</svg>
+								<span class="text-gray-600">{{ info.calObj }}/kcal</span>
+							</div>
+							<div class="flex items-center space-x-2 mt-2">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z"/>
+								</svg>
+								<span class="text-gray-600">4 recettes créées</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
-        {# Bottom Grid #}
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-            {# Notes Block #}
-            <div class="bg-white rounded-2xl shadow-lg p-6">
-                <div class="flex justify-between items-center mb-4">
-                    <h2 class="text-xl font-semibold text-gray-800">Bloc note</h2>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                    </svg>
-                </div>
-                <textarea 
-                    class="w-full h-32 p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-                    placeholder="Ajouter une note..."
-                ></textarea>
-            </div>
+			{# Bottom Grid #}
+			<div
+				class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+				{# Notes Block #}
+				<div class="bg-white rounded-2xl shadow-lg p-6">
+					<div class="flex justify-between items-center mb-4">
+						<h2 class="text-xl font-semibold text-gray-800">Bloc note</h2>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-emerald-600" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+						</svg>
+					</div>
+					<textarea class="w-full h-32 p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent" placeholder="Ajouter une note..."></textarea>
+				</div>
 
-            {# Macronutrients #}
-            <div class="bg-white rounded-2xl shadow-lg p-6">
-                <h2 class="text-xl font-semibold text-gray-800 mb-4">Objectif Macronutriments</h2>
-                <div class="space-y-4">
-                    <div>
-                        <div class="flex justify-between text-sm mb-1">
-                            <span>Protéine</span>
-                            <span>68/150</span>
-                        </div>
-                        <div class="h-2 bg-gray-200 rounded-full">
-                            <div class="h-2 bg-emerald-500 rounded-full" style="width: 45%"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-sm mb-1">
-                            <span>Glucide</span>
-                            <span>121/200</span>
-                        </div>
-                        <div class="h-2 bg-gray-200 rounded-full">
-                            <div class="h-2 bg-emerald-500 rounded-full" style="width: 60%"></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex justify-between text-sm mb-1">
-                            <span>Lipides</span>
-                            <span>12/72</span>
-                        </div>
-                        <div class="h-2 bg-gray-200 rounded-full">
-                            <div class="h-2 bg-emerald-500 rounded-full" style="width: 17%"></div>
+				{# Macronutrients #}
+				<div class="bg-white rounded-2xl shadow-lg p-6">
+					<h2 class="text-xl font-semibold text-gray-800 mb-4">Objectif Macronutriments</h2>
+					<div class="space-y-4">
+						<div>
+							<div class="flex justify-between text-sm mb-1">
+								<span>Protéine</span>
+								<span>68/150</span>
+							</div>
+							<div class="h-2 bg-gray-200 rounded-full">
+								<div class="h-2 bg-emerald-500 rounded-full" style="width: 45%"></div>
+							</div>
+						</div>
+						<div>
+							<div class="flex justify-between text-sm mb-1">
+								<span>Glucide</span>
+								<span>121/200</span>
+							</div>
+							<div class="h-2 bg-gray-200 rounded-full">
+								<div class="h-2 bg-emerald-500 rounded-full" style="width: 60%"></div>
+							</div>
+						</div>
+						<div>
+							<div class="flex justify-between text-sm mb-1">
+								<span>Lipides</span>
+								<span>12/72</span>
+							</div>
+							<div class="h-2 bg-gray-200 rounded-full">
+								<div class="h-2 bg-emerald-500 rounded-full" style="width: 17%"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
