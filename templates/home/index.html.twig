@@ -19,7 +19,7 @@
                 </div>
                 <div class="flex items-center justify-between">
                     <div class="flex flex-col">
-                        <span class="text-4xl font-bold text-emerald-600">1460</span>
+                        <span class="text-4xl font-bold text-emerald-600">{{ info.pasRestants }}</span>
                         <span class="text-sm text-gray-500">Pas Restants</span>
                     </div>
                     <div class="flex flex-col items-end">
@@ -27,7 +27,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
                             </svg>
-                            <span class="text-gray-600">15000/pas</span>
+                            <span class="text-gray-600">{{ info.pasObj }}/pas</span>
                         </div>
                         <div class="flex items-center space-x-2 mt-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -74,7 +74,7 @@
                         </svg>
                         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                             <div class="text-center">
-                                <span class="text-xl font-semibold text-gray-700">1460</span>
+                                <span class="text-xl font-semibold text-gray-700">{{ info.calRestants }}</span>
                                 <span class="text-sm text-gray-500 block">/kcal</span>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
                             </svg>
-                            <span class="text-gray-600">2500/kcal</span>
+                            <span class="text-gray-600">{{ info.calObj }}/kcal</span>
                         </div>
                         <div class="flex items-center space-x-2 mt-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">

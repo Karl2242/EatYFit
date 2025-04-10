@@ -92,6 +92,24 @@ class Info
         return $this->prenom;
     }
 
+    public function getPasRestants(): ?float
+    {
+        if ($this->pas_obj === null || $this->pas_act === null) {
+            return null;
+        }
+    
+        return max(0, $this->pas_obj - $this->pas_act);
+    }
+
+    public function getCalRestants(): ?float
+{
+    if ($this->cal_obj === null || $this->cal_act === null) {
+        return null;
+    }
+
+    return max(0, $this->cal_obj - $this->cal_act);
+}
+
     public function setPrenom(string $prenom): static
     {
         $this->prenom = $prenom;

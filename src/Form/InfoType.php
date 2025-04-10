@@ -24,6 +24,7 @@ class InfoType extends AbstractType
             ->add('pas_obj', NumberType::class)
             ->add('cal_obj', NumberType::class)
             ->add('cal_act', NumberType::class);
+            
     }
 
     public function configureOptions(OptionsResolver $resolver): void
