@@ -37,6 +37,8 @@ final class InfoController extends AbstractController
             $entityManager->persist($info);
             $entityManager->flush();
 
+
+            return $this->redirectToRoute(("app_home"));
             // do anything else you need here, like send an email
 
         }
